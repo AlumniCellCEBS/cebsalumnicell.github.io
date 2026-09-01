@@ -1,40 +1,53 @@
-const alumniData = [
-    { name: "Dr. Ananya Sharma", batch: "2020", field: "Chemical Sciences", role: "Postdoctoral Researcher" },
-    { name: "Rohan Verma", batch: "2021", field: "Physical Sciences", role: "Data Scientist" },
-    { name: "Priya Nair", batch: "2022", field: "Mathematical Sciences", role: "PhD Scholar" }
-];
+// Notes for CEBS Students — small behaviours only.
+// 1) Highlight the current section in both nav rails as you scroll.
+// 2) Show a back-to-top button once you've scrolled a while.
 
-const grid = document.getElementById('directoryGrid');
-const searchInput = document.getElementById('searchInput');
+(function () {
+  "use strict";
 
-// Array of your custom pin colors to make the board look vibrant
-const pinColors = ['pin--coral', 'pin--sky', 'pin--teal', 'pin--violet', 'pin--marigold'];
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
+  var railLinks = Array.prototype.slice.call(document.querySelectorAll(".rail__nav a"));
+  var topLinks = Array.prototype.slice.call(document.querySelectorAll(".top-nav__scroll a"));
 
-function renderDirectory(data) {
-    grid.innerHTML = ''; 
-    data.forEach((person, index) => {
-        // Pick a color in sequence for each person
-        const colorClass = pinColors[index % pinColors.length];
-        
-        const card = document.createElement('div');
-        // Apply your custom 'pin' class and the color class
-        card.className = `pin ${colorClass}`;
-        card.innerHTML = `
-            <h3>${person.name}</h3>
-            <p style="font-weight: 600; color: var(--ink); margin-bottom: 4px;">Class of ${person.batch}</p>
-            <p>${person.field}</p>
-            <p style="font-size: 0.8rem; margin-top: 10px;">Role: ${person.role}</p>
-        `;
-        grid.appendChild(card);
+  function setActive(id) {
+    [railLinks, topLinks].forEach(function (group) {
+      group.forEach(function (link) {
+        var isMatch = link.getAttribute("href") === "#" + id;
+        link.classList.toggle("is-active", isMatch);
+      });
     });
-}
+  }
 
-searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-    const filtered = alumniData.filter(person => 
-        person.name.toLowerCase().includes(query) || person.field.toLowerCase().includes(query)
+  if ("IntersectionObserver" in window && sections.length) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
     );
-    renderDirectory(filtered);
-});
 
-renderDirectory(alumniData);
+    sections.forEach(function (section) {
+      observer.observe(section);
+    });
+  }
+
+  // Back to top button
+  var toTopBtn = document.getElementById("toTop");
+  if (toTopBtn) {
+    window.addEventListener(
+      "scroll",
+      function () {
+        toTopBtn.classList.toggle("is-visible", window.scrollY > 700);
+      },
+      { passive: true }
+    );
+
+    toTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
