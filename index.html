@@ -5,18 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Cell - CEBS</title>
     
-    <!-- Load your requested fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Link to your new style.css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <div class="page">
-        <!-- Main Content Area -->
+        
+        <!-- The Left Navigation Sidebar (This was missing!) -->
+        <aside class="rail">
+            <div class="rail__brand">
+                <span class="rail__mark">Alumni Cell</span>
+                <span class="rail__quanta">CEBS</span>
+            </div>
+            <nav class="rail__nav">
+                <a href="#hero" class="is-active">Home</a>
+                <a href="#directory">Directory</a>
+            </nav>
+            <div class="rail__note">
+                Connecting generations of scientific minds.
+            </div>
+        </aside>
+
+        <!-- Main Content Area (Now properly in the wide right column) -->
         <main class="main">
             
             <!-- Hero Section -->
@@ -25,7 +38,6 @@
                 <h1 class="hero__title">Welcome Back.</h1>
                 <p class="hero__sub">Reconnect with batchmates, discover research collaborations, and mentor the next generation of scientific minds.</p>
                 
-                <!-- THIS IS YOUR STICKY NOTE FROM STEP 3 -->
                 <div class="note note--marigold">
                     <span class="note__label">LATEST UPDATE</span>
                     <p class="note--quote">"The 2026 Alumni Meetup dates will be announced shortly. Make sure your contact details are up to date!"</p>
@@ -40,10 +52,8 @@
                     <h2>Alumni Directory</h2>
                     <p>Search our global network of CEBS graduates.</p>
                     
-                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 8px 12px; border: 1px solid var(--paper-line); border-radius: 6px; width: 100%; max-width: 300px; margin-bottom: 20px; font-family: var(--font-body);">
+                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 8px 12px; border: 1px solid var(--paper-line); border-radius: 6px; width: 100%; max-width: 300px; margin-bottom: 20px; font-family: var(--font-body); outline: none;">
                     
-                    <!-- THIS IS YOUR PINBOARD FROM STEP 3 -->
-                    <!-- JavaScript will inject the alumni pins here -->
                     <div id="directoryGrid" class="board"></div>
                 </div>
             </section>
@@ -51,7 +61,6 @@
         </main>
     </div>
 
-    <!-- Link to your JavaScript -->
     <script src="./js/app.js"></script>
 </body>
 </html>
