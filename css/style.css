@@ -1,0 +1,574 @@
+/* ============================================================
+   Notes for CEBS Students — stylesheet
+   A note-taking page (structure) crossed with a pinboard of
+   sticky notes (the one recurring signature device throughout).
+   ============================================================ */
+
+:root {
+  /* -- paper & ink -- */
+  --paper: #fcfbf8;
+  --paper-line: #e9e3d6;
+  --ink: #23201b;
+  --ink-soft: #5b564c;
+  --ink-faint: #a49d8d;
+
+  /* -- accent family, saturated (borders / tape / pins / links) -- */
+  --coral: #ee5b4f;
+  --marigold: #e8a325;
+  --teal: #159488;
+  --violet: #7457e0;
+  --sky: #2b83c9;
+
+  /* -- accent family, tinted (note backgrounds) -- */
+  --coral-tint: #fce3df;
+  --marigold-tint: #faedd0;
+  --teal-tint: #dceeec;
+  --violet-tint: #e7e2f9;
+  --sky-tint: #dcebf6;
+
+  --radius-note: 6px;
+  --radius-pin: 14px;
+  --shadow-note: 0 10px 18px -12px rgba(35, 32, 27, 0.35);
+  --shadow-pin: 0 8px 20px -14px rgba(35, 32, 27, 0.45);
+
+  --rail-width: 250px;
+  --content-max: 700px;
+
+  --font-display: "Baloo 2", ui-rounded, "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(var(--paper-line) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-color: var(--paper);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--sky);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--coral);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 16px;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+/* ================= layout ================= */
+
+.page {
+  display: grid;
+  grid-template-columns: var(--rail-width) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.rail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 22px;
+  border-right: 1px solid var(--paper-line);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.rail__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rail__mark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+}
+
+.rail__quanta {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--coral);
+  background: var(--coral-tint);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.rail__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rail__nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.rail__nav a:hover {
+  background: var(--paper-line);
+  color: var(--ink);
+}
+
+.rail__nav a.is-active {
+  color: var(--ink);
+  font-weight: 700;
+  border-left-color: var(--link-color, var(--coral));
+  background: var(--tint-color, var(--coral-tint));
+}
+
+.rail__note {
+  margin-top: auto;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.main {
+  min-width: 0;
+  padding: 0 28px 80px;
+}
+
+/* mobile top nav (hidden on desktop) */
+.top-nav {
+  display: none;
+}
+
+@media (max-width: 940px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rail {
+    display: none;
+  }
+
+  .top-nav {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--paper-line);
+    padding: 10px 16px;
+  }
+
+  .top-nav__brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  .top-nav__scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .top-nav__scroll a {
+    flex: none;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: var(--paper-line);
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+
+  .top-nav__scroll a.is-active {
+    color: #fff;
+    background: var(--link-color, var(--coral));
+  }
+
+  .main {
+    padding: 0 18px 60px;
+  }
+}
+
+/* ================= hero ================= */
+
+.hero {
+  max-width: var(--content-max);
+  padding: 64px 0 44px;
+}
+
+.hero__badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: var(--teal-tint);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero__sub {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+/* ================= essay entries ================= */
+
+.entry {
+  max-width: var(--content-max);
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid var(--paper-line);
+  scroll-margin-top: 24px;
+}
+
+.entry:first-of-type {
+  border-top: none;
+}
+
+.entry__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: transparent;
+  -webkit-text-stroke: 1.4px var(--paper-line);
+  margin: 0;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.entry__body h2 {
+  font-size: 1.55rem;
+  margin-bottom: 14px;
+}
+
+.entry__body h3 {
+  font-size: 1.05rem;
+  margin: 26px 0 10px;
+  color: var(--ink);
+}
+
+.entry__body p {
+  max-width: 62ch;
+}
+
+.entry__body ul {
+  margin: 0 0 1em;
+  padding-left: 1.2em;
+}
+
+.entry__body li {
+  margin-bottom: 6px;
+  max-width: 60ch;
+}
+
+@media (max-width: 560px) {
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .entry__num {
+    -webkit-text-stroke: 1.2px var(--paper-line);
+  }
+}
+
+/* ================= sticky note (signature device) ================= */
+
+.note {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 18px 0;
+  padding: 18px 20px 16px;
+  border-radius: var(--radius-note);
+  box-shadow: var(--shadow-note);
+  transform: rotate(-1deg);
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 70px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.note--coral { background: var(--coral-tint); }
+.note--coral::before { background: rgba(238, 91, 79, 0.28); border-color: rgba(238, 91, 79, 0.4); }
+
+.note--marigold { background: var(--marigold-tint); transform: rotate(0.8deg); }
+.note--marigold::before { background: rgba(232, 163, 37, 0.3); border-color: rgba(232, 163, 37, 0.4); }
+
+.note--teal { background: var(--teal-tint); transform: rotate(-0.6deg); }
+.note--teal::before { background: rgba(21, 148, 136, 0.26); border-color: rgba(21, 148, 136, 0.4); }
+
+.note--violet { background: var(--violet-tint); transform: rotate(1deg); }
+.note--violet::before { background: rgba(116, 87, 224, 0.26); border-color: rgba(116, 87, 224, 0.4); }
+
+.note--sky { background: var(--sky-tint); transform: rotate(-0.9deg); }
+.note--sky::before { background: rgba(43, 131, 201, 0.26); border-color: rgba(43, 131, 201, 0.4); }
+
+.note__label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+
+.note--dashed {
+  border: 1.5px dashed var(--ink-faint);
+  box-shadow: none;
+  transform: none;
+  background: transparent;
+}
+
+.note--dashed::before {
+  display: none;
+}
+
+.note--quote {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.note cite {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* interview / Q&A card */
+.interview {
+  border-left: 4px solid var(--violet);
+  padding: 4px 0 4px 20px;
+  margin: 18px 0 26px;
+}
+
+.interview__q {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.interview cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+/* ================= pinboard grid ================= */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 22px 0 10px;
+}
+
+.pin {
+  position: relative;
+  border-radius: var(--radius-pin);
+  padding: 20px 18px 18px;
+  box-shadow: var(--shadow-pin);
+}
+
+.pin::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(35, 32, 27, 0.35);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.pin h3 {
+  font-size: 1rem;
+  margin: 4px 0 8px;
+}
+
+.pin p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.pin p:last-of-type {
+  margin-bottom: 0;
+}
+
+.pin__link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.pin--coral { background: var(--coral-tint); }
+.pin--marigold { background: var(--marigold-tint); }
+.pin--teal { background: var(--teal-tint); }
+.pin--violet { background: var(--violet-tint); }
+.pin--sky { background: var(--sky-tint); }
+
+/* small rotated quote notes for the journal wall */
+.wall {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.wall .note {
+  width: auto;
+  flex: 0 1 260px;
+  max-width: 300px;
+  margin: 0;
+}
+
+/* ================= footer ================= */
+
+.footer {
+  max-width: var(--content-max);
+  padding: 50px 0 20px;
+  border-top: 1px solid var(--paper-line);
+  margin-top: 20px;
+}
+
+.footer p {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.footer__sign {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 6px;
+}
+
+/* ================= back to top ================= */
+
+.to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
