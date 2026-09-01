@@ -3,180 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Cell</title>
+    <title>Alumni Cell - CEBS</title>
     
-    <!-- Load Google Fonts (Baloo 2 and Inter) -->
+    <!-- Load your requested fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Link your custom stylesheet -->
+    <!-- Link to your new style.css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="h-9 w-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-lg">AC</div>
-                <span class="font-bold text-xl tracking-tight text-slate-900">Alumni Cell</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#hero" class="hover:text-indigo-600 transition-colors">Home</a>
-                <a href="#directory" class="hover:text-indigo-600 transition-colors">Directory</a>
-                <a href="#events" class="hover:text-indigo-600 transition-colors">Events</a>
-                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
-            </nav>
-            <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm shadow-indigo-200">
-                Join Network
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative bg-gradient-to-b from-indigo-50/50 via-slate-50 to-slate-50 py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center space-y-6">
-            <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full uppercase tracking-wider">Connecting Generations</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Welcome to the Official <span class="text-indigo-600">Alumni Network</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                Reconnect with batchmates, discover research collaborations, and mentor the next generation of scientific minds.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="#directory" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold shadow-md shadow-indigo-100 transition-all">
-                    Explore Directory
-                </a>
-                <a href="#events" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-6 py-3 rounded-lg font-semibold transition-all">
-                    Upcoming Events
-                </a>
-            </div>
-        </div>
-
-        <!-- Quick Stats Bar -->
-        <div class="max-w-5xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-sm border border-slate-200/80 text-center">
-            <div>
-                <p class="text-3xl font-extrabold text-indigo-600">500+</p>
-                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mt-1">Alumni Worldwide</p>
-            </div>
-            <div>
-                <p class="text-3xl font-extrabold text-indigo-600">15+</p>
-                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mt-1">Graduating Batches</p>
-            </div>
-            <div>
-                <p class="text-3xl font-extrabold text-indigo-600">20+</p>
-                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mt-1">Global Institutions</p>
-            </div>
-            <div>
-                <p class="text-3xl font-extrabold text-indigo-600">100%</p>
-                <p class="text-xs font-medium text-slate-500 uppercase tracking-wider mt-1">Community Driven</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Alumni Directory Section -->
-    <section id="directory" class="max-w-7xl mx-auto px-6 py-16">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-                <h2 class="text-3xl font-bold text-slate-900">Alumni Directory</h2>
-                <p class="text-slate-500 mt-1">Search and connect with graduates across research fields and industries.</p>
-            </div>
-
-            <!-- Filter Controls -->
-            <div class="flex flex-wrap gap-3">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    placeholder="Search by name or institution..." 
-                    class="px-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-64"
-                >
-                <select id="batchFilter" class="px-4 py-2 border border-slate-300 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    <option value="all">All Batches</option>
-                    <option value="2020">Batch 2020</option>
-                    <option value="2021">Batch 2021</option>
-                    <option value="2022">Batch 2022</option>
-                    <option value="2023">Batch 2023</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Directory Grid Container -->
-        <div id="directoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Cards will be injected dynamically via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Upcoming Events Section -->
-    <section id="events" class="bg-slate-100/70 border-t border-b border-slate-200 py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Events & Meetups</h2>
-                <p class="text-slate-500 mt-2">Join annual reunions, guest lectures, and alumni networking sessions.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <!-- Event Card 1 -->
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block px-2.5 py-1 bg-indigo-50 text-indigo-700 text-xs font-semibold rounded-md mb-3">Annual Reunion</span>
-                        <h3 class="text-xl font-bold text-slate-900">Alumni Homecoming 2026</h3>
-                        <p class="text-slate-600 text-sm mt-2">Interactive sessions, campus walk, and research discussions with current students.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>📍 Campus Auditorium</span>
-                        <span>📅 Dec 18, 2026</span>
-                    </div>
+    <div class="page">
+        <!-- Main Content Area -->
+        <main class="main">
+            
+            <!-- Hero Section -->
+            <section class="hero" id="hero">
+                <span class="hero__badge">CEBS ALUMNI NETWORK</span>
+                <h1 class="hero__title">Welcome Back.</h1>
+                <p class="hero__sub">Reconnect with batchmates, discover research collaborations, and mentor the next generation of scientific minds.</p>
+                
+                <!-- THIS IS YOUR STICKY NOTE FROM STEP 3 -->
+                <div class="note note--marigold">
+                    <span class="note__label">LATEST UPDATE</span>
+                    <p class="note--quote">"The 2026 Alumni Meetup dates will be announced shortly. Make sure your contact details are up to date!"</p>
+                    <cite>— Alumni Cell Core Team</cite>
                 </div>
+            </section>
 
-                <!-- Event Card 2 -->
-                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <span class="inline-block px-2.5 py-1 bg-amber-50 text-amber-700 text-xs font-semibold rounded-md mb-3">Webinar</span>
-                        <h3 class="text-xl font-bold text-slate-900">Careers in Modern Research</h3>
-                        <p class="text-slate-600 text-sm mt-2">Panel discussion featuring alumni currently working in international laboratories and industry.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span>💻 Online (Zoom)</span>
-                        <span>📅 Oct 05, 2026</span>
-                    </div>
+            <!-- Directory Section -->
+            <section class="entry" id="directory">
+                <h2 class="entry__num">01</h2>
+                <div class="entry__body">
+                    <h2>Alumni Directory</h2>
+                    <p>Search our global network of CEBS graduates.</p>
+                    
+                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 8px 12px; border: 1px solid var(--paper-line); border-radius: 6px; width: 100%; max-width: 300px; margin-bottom: 20px; font-family: var(--font-body);">
+                    
+                    <!-- THIS IS YOUR PINBOARD FROM STEP 3 -->
+                    <!-- JavaScript will inject the alumni pins here -->
+                    <div id="directoryGrid" class="board"></div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-slate-900 text-slate-400 py-12 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-3 text-white font-bold text-lg mb-3">
-                    <div class="h-8 w-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white text-sm">AC</div>
-                    <span>Alumni Cell</span>
-                </div>
-                <p class="text-sm text-slate-400 leading-relaxed">
-                    Fostering lifelong relationships and supporting academic and professional excellence across our global alumni network.
-                </p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#directory" class="hover:text-white transition-colors">Directory</a></li>
-                    <li><a href="#events" class="hover:text-white transition-colors">Events</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3 text-sm">Contact</h4>
-                <p class="text-sm">Alumni Cell Office</p>
-                <p class="text-sm mt-1">Email: alumni@cebs.ac.in</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-500">
-            © 2026 Alumni Cell. All rights reserved.
-        </div>
-    </footer>
+        </main>
+    </div>
 
-    <!-- Front-End Interactive Script -->
+    <!-- Link to your JavaScript -->
     <script src="./js/app.js"></script>
 </body>
 </html>
