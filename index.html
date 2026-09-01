@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Cell - CEBS</title>
     
+    <!-- Load custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link the CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <div class="page">
-        
-        <!-- The Left Navigation Sidebar (This was missing!) -->
+        <!-- Left Sidebar Navigation -->
         <aside class="rail">
             <div class="rail__brand">
                 <span class="rail__mark">Alumni Cell</span>
@@ -23,20 +25,21 @@
             <nav class="rail__nav">
                 <a href="#hero" class="is-active">Home</a>
                 <a href="#directory">Directory</a>
+                <a href="#events">Events</a>
             </nav>
             <div class="rail__note">
                 Connecting generations of scientific minds.
             </div>
         </aside>
 
-        <!-- Main Content Area (Now properly in the wide right column) -->
+        <!-- Main Content Area -->
         <main class="main">
             
             <!-- Hero Section -->
             <section class="hero" id="hero">
                 <span class="hero__badge">CEBS ALUMNI NETWORK</span>
                 <h1 class="hero__title">Welcome Back.</h1>
-                <p class="hero__sub">Reconnect with batchmates, discover research collaborations, and mentor the next generation of scientific minds.</p>
+                <p class="hero__sub">Reconnect with batchmates, discover research collaborations, and mentor the next generation.</p>
                 
                 <div class="note note--marigold">
                     <span class="note__label">LATEST UPDATE</span>
@@ -45,22 +48,51 @@
                 </div>
             </section>
 
-            <!-- Directory Section -->
+            <!-- Directory Section (Front-End Only) -->
             <section class="entry" id="directory">
                 <h2 class="entry__num">01</h2>
                 <div class="entry__body">
                     <h2>Alumni Directory</h2>
-                    <p>Search our global network of CEBS graduates.</p>
+                    <p>Search our global network of graduates.</p>
                     
-                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 8px 12px; border: 1px solid var(--paper-line); border-radius: 6px; width: 100%; max-width: 300px; margin-bottom: 20px; font-family: var(--font-body); outline: none;">
+                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 10px 14px; border: 2px solid var(--paper-line); border-radius: 8px; width: 100%; max-width: 350px; margin: 10px 0 24px 0; font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s ease;">
                     
+                    <!-- JavaScript will inject the dummy data pins here -->
                     <div id="directoryGrid" class="board"></div>
                 </div>
             </section>
 
+            <!-- Events Section -->
+            <section class="entry" id="events">
+                <h2 class="entry__num">02</h2>
+                <div class="entry__body">
+                    <h2>Upcoming Events</h2>
+                    <p>Join annual reunions and guest lectures.</p>
+                    
+                    <div class="note note--teal">
+                        <span class="note__label">GUEST LECTURE</span>
+                        <p class="note--quote">"Mathematical Modeling in Chemical Sciences"</p>
+                        <cite>📍 UM-DAE CEBS Auditorium | 📅 Oct 15, 2026</cite>
+                    </div>
+
+                    <div class="note note--coral">
+                        <span class="note__label">NETWORKING</span>
+                        <p class="note--quote">"Annual Research & Industry Mixer"</p>
+                        <cite>📍 Mumbai Campus | 📅 Dec 18, 2026</cite>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Alumni Cell Office • alumni@cebs.ac.in</p>
+                <div class="footer__sign">Alumni Cell CEBS © 2026</div>
+            </footer>
+
         </main>
     </div>
 
+    <!-- Link the JavaScript -->
     <script src="./js/app.js"></script>
 </body>
 </html>
