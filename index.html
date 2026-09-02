@@ -3,32 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Cell - CEBS</title>
+    <title>CEBS Notes - Quanta 20</title>
     
-    <!-- Load custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Link the CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
+    <!-- Mobile Top Navigation (Visible only on small screens) -->
+    <nav class="top-nav">
+        <div class="top-nav__brand">
+            <span>CEBS Notes</span>
+            <span class="rail__quanta" style="font-size: 0.6rem;">Q20</span>
+        </div>
+        <div class="top-nav__scroll">
+            <a href="#hero" class="is-active">Intro</a>
+            <a href="#getting-here">Campus</a>
+            <a href="#hostel">Hostel</a>
+            <a href="#academics">Academics</a>
+            <a href="#mindset">Mindset</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#clubs">Clubs</a>
+        </div>
+    </nav>
+
     <div class="page">
-        <!-- Left Sidebar Navigation -->
+        <!-- Desktop Left Sidebar -->
         <aside class="rail">
             <div class="rail__brand">
-                <span class="rail__mark">Alumni Cell</span>
-                <span class="rail__quanta">CEBS</span>
+                <span class="rail__mark">CEBS Notes</span>
+                <span class="rail__quanta">QUANTA 20</span>
             </div>
             <nav class="rail__nav">
-                <a href="#hero" class="is-active">Home</a>
-                <a href="#directory">Directory</a>
-                <a href="#events">Events</a>
+                <a href="#hero" class="is-active">Intro</a>
+                <a href="#getting-here">01 Getting to campus</a>
+                <a href="#hostel">02 Hostel life</a>
+                <a href="#academics">03 Academics</a>
+                <a href="#mindset">04 Mindset</a>
+                <a href="#settling">05 Settling in</a>
+                <a href="#help">06 Asking for help</a>
+                <a href="#bigger-picture">07 The bigger picture</a>
+                <a href="#facilities">08 Facilities</a>
+                <a href="#clubs">09 Clubs & activities</a>
+                <a href="#journal">10 Journal</a>
             </nav>
             <div class="rail__note">
-                Connecting generations of scientific minds.
+                Written by seniors, kept alive by juniors.
             </div>
         </aside>
 
@@ -37,62 +59,299 @@
             
             <!-- Hero Section -->
             <section class="hero" id="hero">
-                <span class="hero__badge">CEBS ALUMNI NETWORK</span>
-                <h1 class="hero__title">Welcome Back.</h1>
-                <p class="hero__sub">Reconnect with batchmates, discover research collaborations, and mentor the next generation.</p>
-                
-                <div class="note note--marigold">
-                    <span class="note__label">LATEST UPDATE</span>
-                    <p class="note--quote">"The 2026 Alumni Meetup dates will be announced shortly. Make sure your contact details are up to date!"</p>
-                    <cite>— Alumni Cell Core Team</cite>
-                </div>
+                <span class="hero__badge">FROM YOUR SENIORS</span>
+                <h1 class="hero__title">Notes for CEBS students</h1>
+                <p class="hero__sub">Everything about UM-DAE CEBS that never quite makes it into the prospectus — getting here, settling in, and figuring out how to actually enjoy it. Written by the batches before you, and meant to keep growing with yours.</p>
             </section>
 
-            <!-- Directory Section (Front-End Only) -->
-            <section class="entry" id="directory">
+            <!-- 01 Finding your way -->
+            <section class="entry" id="getting-here">
                 <h2 class="entry__num">01</h2>
                 <div class="entry__body">
-                    <h2>Alumni Directory</h2>
-                    <p>Search our global network of graduates.</p>
+                    <h2>Finding your way to campus</h2>
+                    <p>UM-DAE CEBS sits inside the University of Mumbai's Kalina campus (Vidyanagari, Santacruz East, Mumbai 400098), split across two areas — the Prefabricated Structures near the Anna Bhau Sathe Atithi Griha, and the Takshashila and Nalanda buildings.</p>
                     
-                    <input type="text" id="searchInput" placeholder="Search by name or field..." style="padding: 10px 14px; border: 2px solid var(--paper-line); border-radius: 8px; width: 100%; max-width: 350px; margin: 10px 0 24px 0; font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s ease;">
-                    
-                    <!-- JavaScript will inject the dummy data pins here -->
-                    <div id="directoryGrid" class="board"></div>
+                    <ul>
+                        <li><strong>Flying in:</strong> a cab or Uber from the airport takes about half an hour.</li>
+                        <li><strong>By train:</strong> LTT, Mumbai Central, CSMT, and Bandra Terminus are your main options — take a metered auto or an Uber from any of them.</li>
+                        <li><strong>Metro & local:</strong> the nearest metro station is Bandra Colony on the Aqua Line, which also connects to the airport. The nearest local station is Santacruz East.</li>
+                        <li><strong>Bus:</strong> route 318 stops on campus about once an hour.</li>
+                    </ul>
+
+                    <div class="note note--sky">
+                        <span class="note__label">ESSENTIAL APPS</span>
+                        <p><strong>Chalo</strong> for bus tickets, <strong>RailOne</strong> for local trains, and <strong>MumbaiOne</strong> for all the metro lines.</p>
+                    </div>
+
+                    <p>One more thing worth knowing early: everyone admitted in a given year becomes part of a Quanta — it's just how CEBS tracks batches. 2026 makes you <strong>Quanta 20</strong>, the twentieth batch of CEBS.</p>
                 </div>
             </section>
 
-            <!-- Events Section -->
-            <section class="entry" id="events">
+            <!-- 02 Hostel Life -->
+            <section class="entry" id="hostel">
                 <h2 class="entry__num">02</h2>
                 <div class="entry__body">
-                    <h2>Upcoming Events</h2>
-                    <p>Join annual reunions and guest lectures.</p>
+                    <h2>Hostel life</h2>
+                    <p>You'll be randomly assigned a hostel room based on availability, in either the Prefabs or Takshashila — girls are placed in Takshashila only. Take a stroll around the university campus early on; you'll struggle to find this much greenery anywhere else in Mumbai.</p>
                     
-                    <div class="note note--teal">
-                        <span class="note__label">GUEST LECTURE</span>
-                        <p class="note--quote">"Mathematical Modeling in Chemical Sciences"</p>
-                        <cite>📍 UM-DAE CEBS Auditorium | 📅 Oct 15, 2026</cite>
-                    </div>
+                    <h3>The basics</h3>
+                    <p>Quick-commerce apps are a lifeline here — consider them essential. For anything else, the Kalina market is a short walk from Gate 1. There's no dinner served in the mess on Sundays, so keep a nearby restaurant in mind for that one night.</p>
+
+                    <h3>Curfew</h3>
+                    <p>Sign the register if you're entering after 10 pm, and plan to leave the hostel before 10 pm. If you're stuck coming back late and something feels off, contact seniors — that's exactly what they're there for.</p>
+
+                    <h3>On campus</h3>
+                    <p>A music room, a gym, the mess, a table-tennis table, the library, a computer lab, sports equipment, and a volleyball court — all part of daily life here, not occasional treats.</p>
 
                     <div class="note note--coral">
-                        <span class="note__label">NETWORKING</span>
-                        <p class="note--quote">"Annual Research & Industry Mixer"</p>
-                        <cite>📍 Mumbai Campus | 📅 Dec 18, 2026</cite>
+                        <span class="note__label">MEDICAL PROTOCOL</span>
+                        <p>If you need a doctor: The Health Centre near Gate 1 is the closest option, followed by Lilavati Hospital, Nanavati Hospital, and Cooper Hospital.</p>
+                    </div>
+
+                    <h3>Beyond CEBS</h3>
+                    <p>University-wide facilities like the sports complex and Mumbai University's cultural events are open to you too. There's usually something on culturally — festival celebrations, get-togethers, and the occasional talk at TIFR or HBCSE worth crossing campus for.</p>
+
+                    <h3>Small batch, small world</h3>
+                    <p>Because CEBS batches are small, everyone is genuinely within reach — there's no real senior–junior complex here. Once meals wind down, the mess turns into the common room.</p>
+                </div>
+            </section>
+
+            <!-- 03 Academics -->
+            <section class="entry" id="academics">
+                <h2 class="entry__num">03</h2>
+                <div class="entry__body">
+                    <h2>Academics at CEBS</h2>
+                    <p>CEBS keeps an institute-wide attendance rule of 85% — fall below it and it starts costing you marks.</p>
+
+                    <div class="note note--marigold" style="max-width: 300px;">
+                        <p class="note--quote">"Attend all classes."</p>
+                        <cite>— Swagata Ma'am</cite>
+                    </div>
+
+                    <p>If you notice you genuinely can't bring yourself to show up to class consistently — being unwell doesn't count against you — take that as an early sign something's off, and get help before it snowballs.</p>
+                    
+                    <p>And if you actually are unwell: get a medical certificate from the university health centre or any doctor you trust, get it signed by the dean, and submit it to the academic office. That keeps your attendance protected.</p>
+
+                    <p>Your first lab session usually comes with a proper lab tour. If your timetable allows, you're also free to sit in on classes from other batches. The 2.5-month vacation is usually when internships happen, so it's worth planning ahead for one.</p>
+
+                    <h3>The CGPA system</h3>
+                    <p>Grading runs out of 10 for each semester. Most students don't think much about the number itself — unless it falls below 6, in which case it's real: you lose your scholarship. If you spent school years prepping for competitive exams, that phase is over now. There's a lot more to explore and learn here than any single exam can capture.</p>
+
+                    <h3>Reports, LaTeX, and the research habit</h3>
+                    <p>Writing reports and research articles is core to life at a research institute, and everyone's encouraged to pick up LaTeX — it's the standard for producing clean PDFs with graphs, equations, formatting, even your CV. CEBS also sits inside a wider academic network — TIFR, HBCSE, BARC, IIT Bombay, and ACTREC are all nearby and worth knowing about.</p>
+
+                    <h3>Beyond the syllabus</h3>
+                    <p>This is a research college, so a rational, curious outlook helps everywhere. There's no formal channel for a good idea here — if you've got one, just reach out to the relevant club and get it done. Expanding your academic skill set is one of the best things you can do here. Talk to seniors, stay open to new ideas, and try to soak up as much as you can.</p>
+                </div>
+            </section>
+
+            <!-- 04 Mindset -->
+            <section class="entry" id="mindset">
+                <h2 class="entry__num">04</h2>
+                <div class="entry__body">
+                    <h2>Mindset & the comparison trap</h2>
+                    <p>Most of you have spent your school years as the strongest maths, physics, or CS student in the room. Some students arrive here, see others further ahead in ability or knowledge, and get discouraged enough to stop trying, since they can't be the topper anymore.</p>
+                    
+                    <p>That's a mistake. Being competitive is fine — useful, even — as long as it's pushing you to improve your own knowledge, skills, and grades. Some students take it somewhere more destructive: when they can't be the topper the way they used to be, their self-esteem takes the hit, they get demotivated, and their grades fall further still — which only makes things worse.</p>
+                    
+                    <div class="note note--teal">
+                        <span class="note__label">A HEALTHIER AIM</span>
+                        <p>Try to be the best student you personally can be. Put in the work, take whatever help is on offer, and try to make your years at CEBS genuinely good ones.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05 Settling In -->
+            <section class="entry" id="settling">
+                <h2 class="entry__num">05</h2>
+                <div class="entry__body">
+                    <h2>Settling in</h2>
+                    <p>For a lot of you, this will be the first real stretch of time away from home. Missing it — the people, the routine, the comfort of the familiar — is a normal part of settling into somewhere new, not a sign that anything's wrong. It tends to ease as you build a life here, and CEBS's small batch size helps: you're rarely more than a conversation away from someone who's felt exactly the same way.</p>
+                    
+                    <div class="note note--dashed">
+                        <span class="note__label">STILL BEING WRITTEN</span>
+                        <p>This section — homesickness and building a support system in full — is still being filled in by seniors. If you need to talk to someone right now, find your Quanta rep or check the section below.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 06 Asking for help -->
+            <section class="entry" id="help">
+                <h2 class="entry__num">06</h2>
+                <div class="entry__body">
+                    <h2>Asking for help, early</h2>
+                    <p>Talk to your favourite senior. Find out who's actually approachable at CEBS — among faculty, seniors, or the counsellor, if there is one.</p>
+                    <p>Mental health is taken seriously here. If anything's bothering you, don't feel shy about approaching a senior or a faculty member — that's what they're there for. There's also a dedicated Women's Cell for matters that need specific assistance.</p>
+                </div>
+            </section>
+
+            <!-- 07 Bigger Picture -->
+            <section class="entry" id="bigger-picture">
+                <h2 class="entry__num">07</h2>
+                <div class="entry__body">
+                    <h2>The bigger picture</h2>
+                    
+                    <div class="interview">
+                        <div class="interview__q">What's the real scope of doing a degree at a place like CEBS?</div>
+                        <p>Research institutes like this one work a little differently from engineering or medical colleges. Class sizes are small, and early on you spend your time learning the raw basics of science rather than applying existing knowledge to real-world problems. As you move up — bachelor's to PhD — your focus narrows and sharpens. It can get academically intense, but every college has its own version of intense.</p>
+                        <p>At a premier institute, opportunities aren't scarce — internships, projects, and thesis work come your way both within and outside college, starting from your bachelor's or master's itself.</p>
+                        <p>As for after: most of these institutes skip campus placements. Most people go on to a PhD, a few pivot into an MBA, and some head straight into industry or a government job. If you genuinely enjoy learning for its own sake, and you're fine taking your time to settle into life and career, this path suits you well.</p>
+                        <cite>— A R Bathri Narayan, Senior</cite>
+                    </div>
+
+                    <div class="note note--dashed">
+                        <span class="note__label">STILL BEING WRITTEN</span>
+                        <p>A short list of CEBS alumni and where they've gone on to is being put together for this page. If you know one worth adding, tell a senior.</p>
+                    </div>
+
+                    <h3>Making time to enjoy college</h3>
+                    <div class="note note--dashed">
+                        <span class="note__label">STILL BEING WRITTEN</span>
+                        <p>This section hasn't been filled in yet — it's an open invitation for a senior to write it. Until then, take the line below as the short version:</p>
+                        <p style="margin-top: 8px; font-style: italic;">"Live to the fullest, and say yes to every opportunity this city gives you to enjoy yourself."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 08 Facilities -->
+            <section class="entry" id="facilities">
+                <h2 class="entry__num">08</h2>
+                <div class="entry__body">
+                    <h2>Facilities & grants</h2>
+                    <p>What CEBS provides for, and alongside, your degree. (Procedure and eligibility steps are being added. Ask your batch coordinator in the meantime).</p>
+                    
+                    <div class="board">
+                        <div class="pin pin--sky">
+                            <h3>Book grant</h3>
+                            <p>₹6,000 per academic year.</p>
+                        </div>
+                        <div class="pin pin--marigold">
+                            <h3>Contingency grant</h3>
+                            <p>Includes a laptop grant of ₹40,000.</p>
+                        </div>
+                        <div class="pin pin--teal">
+                            <h3>Campus Wifi</h3>
+                            <p>Campus-wide connectivity.</p>
+                        </div>
+                        <div class="pin pin--coral">
+                            <h3>Mess</h3>
+                            <p>No dinner on Sundays — see Hostel life.</p>
+                        </div>
+                        <div class="pin pin--violet">
+                            <h3>Medical</h3>
+                            <p>Insurance covers CEBS students. On-campus physician and counsellor access available.</p>
+                        </div>
+                        <div class="pin pin--sky">
+                            <h3>Recreation</h3>
+                            <p>Gym open to hostel students daily. Music room free to use between classes.</p>
+                        </div>
+                        <div class="pin pin--teal">
+                            <h3>Academic</h3>
+                            <p>Library is part of everyday campus life. Computer lab for coursework and projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 09 Clubs -->
+            <section class="entry" id="clubs">
+                <h2 class="entry__num">09</h2>
+                <div class="entry__body">
+                    <h2>Clubs & activities</h2>
+                    <p>Feel free to approach any club member directly to learn more — there's no formal application layer here.</p>
+                    
+                    <div class="board">
+                        <div class="pin pin--coral">
+                            <h3>Art Club</h3>
+                            <p>Runs workshops and big events like ORIS alongside weekly meetups. Participates in INCICM and visits the Kala Ghoda Art Festival.</p>
+                            <span class="pin__link">@cebs_artclub</span>
+                        </div>
+                        <div class="pin pin--violet">
+                            <h3>Dance Club — Pravah</h3>
+                            <p>Regular practice slots in the Takshashila gymnasium. Performs at INCICM and Samavaya.</p>
+                            <span class="pin__link">@pravah_cebs</span>
+                        </div>
+                        <div class="pin pin--sky">
+                            <h3>Theatre Club</h3>
+                            <p>A space for actors and writers. Street plays and stage plays for INCICM, Samavaya, Women's Day, and Swachhata Pakhwada.</p>
+                        </div>
+                        <div class="pin pin--marigold">
+                            <h3>Literature Club</h3>
+                            <p>Debates, JAMs, MUNs, book-reading nights, treasure hunts, and writing. Keeps a rare fiction catalogue.</p>
+                        </div>
+                        <div class="pin pin--teal">
+                            <h3>E-Game Club</h3>
+                            <p>Gaming, indie titles, and board games. Runs Re-Roll, Replay, and competes in IIESM meets.</p>
+                        </div>
+                        <div class="pin pin--coral">
+                            <h3>Cinematography Club</h3>
+                            <p>Sharpens filmmaking and photography — shooting short films for festivals and INCICM.</p>
+                            <span class="pin__link">@afilmby_cebs</span>
+                        </div>
+                        <div class="pin pin--violet">
+                            <h3>Music Club</h3>
+                            <p>Runs Symphonia, an informal jam session. Flagship shows land during Samavaya and INCICM.</p>
+                            <span class="pin__link">@cebs_music_club</span>
+                        </div>
+                        <div class="pin pin--sky">
+                            <h3>Science & Maths Club</h3>
+                            <p>External speaker talks, the CEBS Integral Bee, and community science discussions.</p>
+                            <span class="pin__link">@mathclub_cebs</span>
+                        </div>
+                        <div class="pin pin--marigold">
+                            <h3>CEBS Lifestyle</h3>
+                            <p>Where student life comes together — candid moments and Cat Friday.</p>
+                            <span class="pin__link">@cebs_lifestyle</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10 Journal -->
+            <section class="entry" id="journal">
+                <h2 class="entry__num">10</h2>
+                <div class="entry__body">
+                    <h2>Journal — bits of life at CEBS</h2>
+                    <p>A running collection of small, specific testimonials from students. The idea is that someone else's small fix might quietly solve your problem too.</p>
+
+                    <div class="wall">
+                        <div class="note note--sky">
+                            <p class="note--quote">"You can never outwalk Antia sir."</p>
+                            <cite>— Ashish</cite>
+                        </div>
+                        <div class="note note--marigold">
+                            <p class="note--quote">"Enjoy lyf."</p>
+                            <cite>— Anish</cite>
+                        </div>
+                        <div class="note note--teal">
+                            <p class="note--quote">"Believe in science."</p>
+                            <cite>— Manasvi</cite>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Ideas for future submissions</h3>
+                    <ul>
+                        <li>A quantitative analysis of breakfast in the mess</li>
+                        <li>Owning a cycle — profit or loss</li>
+                        <li>Resource-maxxing as a CEBS student</li>
+                        <li>Sunday night dinner search algorithm</li>
+                    </ul>
+
+                    <div class="note note--dashed" style="margin-top: 20px;">
+                        <span class="note__label">HAVE SOMETHING TO ADD?</span>
+                        <p>The submission form will be linked here once it's live — ask your cultural coordinator in the meantime.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Footer -->
             <footer class="footer">
-                <p>Alumni Cell Office • alumni@cebs.ac.in</p>
-                <div class="footer__sign">Alumni Cell CEBS © 2026</div>
+                <p>Written and kept up to date by the seniors and students of CEBS — Quanta after Quanta. If something here is out of date, you're the one who gets to fix it for the next batch.</p>
+                <div class="footer__sign">See you on campus.</div>
             </footer>
 
         </main>
     </div>
 
-    <!-- Link the JavaScript -->
-    <script src="./js/app.js"></script>
 </body>
 </html>
